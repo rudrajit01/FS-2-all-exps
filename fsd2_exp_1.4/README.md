@@ -1,70 +1,175 @@
-# Getting Started with Create React App
+# 📅 Experiment 1.4 - Optimized Calendar with Post Scheduler
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> **Full-Stack 2 (24CSP-337)** | **Semester:** 5th | **Section:** 24BCY-2(B)NTPP  
+> **Student:** Rudrajit Pramanik | **UID:** 24BCY70262 | **Branch:** B.E. CSE (Cyber Security)  
+> **Date of Performance:** 20/07/2026
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🎯 Aim
 
-### `npm start`
+To design and implement an interactive calendar interface for scheduling posts with optimized rendering performance and robust testing strategies.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📋 Objectives
 
-### `npm test`
+- Display an interactive 31‑day calendar with day selection
+- Optimize rendering using `React.memo`, `useMemo`, and `useCallback`
+- Implement post scheduling with Redux state management
+- Enable drag‑and‑drop and resize interactions using FullCalendar
+- Support **Day**, **Week**, and **Month** views
+- Write unit tests for UI components using Jest & React Testing Library
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🧰 Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Technology | Purpose |
+|------------|---------|
+| **React 18** | UI library |
+| **Redux Toolkit** | State management for posts |
+| **FullCalendar v5** | Interactive calendar with drag‑and‑drop |
+| **React.memo / useMemo / useCallback** | Performance optimization |
+| **Jest + React Testing Library** | Unit testing |
+| **CSS3** | Styling |
+| **Git & GitHub** | Version control |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ✨ Features
 
-### `npm run eject`
+### 🔹 Optimized Calendar (Experiment 1.4 – Part 1)
+- 31‑day grid layout for July 2026
+- Click to select/highlight any day
+- Performance optimizations:
+  - `React.memo` prevents unnecessary re‑renders of individual day cells
+  - `useMemo` caches expensive date calculations
+  - `useCallback` provides stable function references
+- Clean, responsive UI
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🔹 Post Scheduler (New Feature – Part 2)
+- FullCalendar integration with **Month**, **Week**, and **Day** views
+- Pre‑loaded demo posts mapped to dates and times
+- **Drag & Drop** – move posts to different dates/times
+- **Resize** – adjust event duration
+- **Click** on an event to view details and delete
+- **Add Demo Post** button to create new posts
+- Redux manages all post data (add, update, delete)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📂 Project Structure
+fsd2_exp_1.4/
+├── public/
+│ └── index.html # CDN link for FullCalendar CSS
+├── src/
+│ ├── components/
+│ │ ├── Calendar.js # Optimized calendar (React.memo)
+│ │ ├── Calendar.css
+│ │ ├── Day.js # Individual day cell
+│ │ ├── Day.css
+│ │ ├── PostScheduler.jsx # FullCalendar with Redux
+│ │ └── PostScheduler.css
+│ ├── hooks/
+│ │ └── useCalendar.js # Custom hook with useMemo/useCallback
+│ ├── store/
+│ │ ├── index.js # Redux store configuration
+│ │ └── postsSlice.js # Posts reducer & actions
+│ ├── tests/
+│ │ ├── Calendar.test.js
+│ │ └── Day.test.js
+│ ├── App.js # Main app with tab switching
+│ ├── App.css
+│ └── index.js
+├── package.json
+└── README.md
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+text
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🚀 Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
+- Node.js (v14 or later)
+- npm (v6 or later)
 
-### Code Splitting
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+# Clone the repository (or navigate to this folder)
+git clone https://github.com/rudrajit01/FS-2-all-exps.git
+cd FS-2-all-exps/fsd2_exp_1.4
 
-### Analyzing the Bundle Size
+# Install dependencies
+npm install --legacy-peer-deps
+Running the App
+bash
+npm start
+The app will open at http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Running Tests
+bash
+# Run all tests
+npm test
 
-### Making a Progressive Web App
+# Run with coverage
+npm test -- --coverage
+Building for Production
+bash
+npm run build
+🧪 Testing
+Calendar Component Tests – verifies rendering, day selection, and clear functionality.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Day Component Tests – checks click events, selected/ weekend states, and accessibility.
 
-### Advanced Configuration
+All tests are written with Jest and React Testing Library.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+📸 Screenshots
+(Add your own screenshots here to showcase the calendar and scheduler)
 
-### Deployment
+Example:
+https://screenshots/calendar.png
+https://screenshots/scheduler.png
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+📚 Learning Outcomes
+Understand React rendering lifecycle
 
-### `npm run build` fails to minify
+Identify performance bottlenecks in UI
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Optimize rendering using React.memo
+
+Use useMemo for expensive computations
+
+Use useCallback for stable function references
+
+Reduce unnecessary component re‑renders
+
+Build reusable React components
+
+Perform component testing using Jest
+
+Integrate third‑party libraries (FullCalendar)
+
+Manage application state with Redux Toolkit
+
+Implement drag‑and‑drop and event resizing
+
+Improve user experience for content planning
+
+🤝 Contributing
+This is an academic project. For suggestions or improvements, feel free to open an issue or pull request.
+
+📝 License
+This project is for educational purposes only.
+
+👤 Author
+Rudrajit Pramanik
+
+GitHub: @rudrajit01
+
+UID: 24BCY70262
+
+Branch: B.E. CSE (Cyber Security)
+
