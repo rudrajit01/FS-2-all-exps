@@ -1,0 +1,32 @@
+{
+  "name": "social-media-post-composer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Social Media Post Composer - React + Redux Toolkit + Reselect",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.1.0",
+    "react-scripts": "5.0.1",
+    "reselect": "^5.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+

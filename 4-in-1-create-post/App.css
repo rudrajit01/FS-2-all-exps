@@ -1,0 +1,469 @@
+/* ==============================
+   Social Media Post Composer
+   Premium Glassmorphism Theme
+   ============================== */
+
+/* ---------- Global Reset & Body ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto,
+    'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+  background-attachment: fixed;
+  padding: 2rem 1rem;
+  color: #1a1a2e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- App Container (Glassmorphism) ---------- */
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 32px;
+  padding: 2.5rem 2rem;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 8px 32px 0 rgba(31, 38, 135, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* ---------- Header Section ---------- */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.app-title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* ---------- Toggle Button ---------- */
+.toggle-btn {
+  padding: 0.65rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.toggle-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(124, 58, 237, 0.5);
+}
+
+.toggle-btn:active {
+  transform: scale(0.97);
+}
+
+/* ---------- Filter Section ---------- */
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.04),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4a4a6a;
+  white-space: nowrap;
+}
+
+.filter-select {
+  padding: 0.55rem 1rem;
+  border: 2px solid rgba(124, 58, 237, 0.15);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 140px;
+  max-width: 220px;
+}
+
+.filter-select:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+}
+
+.filter-select:hover {
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+.filter-badge {
+  padding: 0.4rem 1rem;
+  background: rgba(124, 58, 237, 0.1);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #4a4a6a;
+  white-space: nowrap;
+}
+
+.filter-badge strong {
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+/* ---------- Posts List Container ---------- */
+.posts-list-container {
+  margin-top: 0.5rem;
+}
+
+.list-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 1.25rem;
+}
+
+.list-title-suffix {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6b6b8a;
+}
+
+.no-posts {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 1.1rem;
+  color: #8a8aaa;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  border: 2px dashed rgba(124, 58, 237, 0.15);
+}
+
+/* ---------- Posts Grid ---------- */
+.posts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* ---------- Post Card ---------- */
+.post-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem 1.75rem;
+  border-left: 6px solid #e0e0e0;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 0 20px 0 80px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Category-specific left border colors */
+.post-card.category-react {
+  border-left-color: #61dafb;
+}
+.post-card.category-react::after {
+  background: #61dafb;
+}
+
+.post-card.category-redux {
+  border-left-color: #764abc;
+}
+.post-card.category-redux::after {
+  background: #764abc;
+}
+
+.post-card.category-javascript {
+  border-left-color: #f7df1e;
+}
+.post-card.category-javascript::after {
+  background: #f7df1e;
+}
+
+/* ---------- Post Title ---------- */
+.post-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+/* ---------- Post Content ---------- */
+.post-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a4a6a;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Category Tag ---------- */
+.post-category-tag {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(124, 58, 237, 0.08);
+  color: #7c3aed;
+  transition: all 0.3s ease;
+}
+
+.post-card.category-react .post-category-tag {
+  background: rgba(97, 218, 251, 0.15);
+  color: #0284c7;
+}
+
+.post-card.category-redux .post-category-tag {
+  background: rgba(118, 74, 188, 0.15);
+  color: #6d28d9;
+}
+
+.post-card.category-javascript .post-category-tag {
+  background: rgba(247, 223, 30, 0.25);
+  color: #a16207;
+}
+
+/* ---------- Responsive Styles ---------- */
+
+/* Tablet */
+@media (min-width: 640px) {
+  body {
+    padding: 3rem 2rem;
+  }
+
+  .app-container {
+    padding: 3rem 2.5rem;
+  }
+
+  .app-title {
+    font-size: 2.4rem;
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  body {
+    padding: 4rem 2rem;
+  }
+
+  .app-container {
+    padding: 3.5rem 3rem;
+  }
+
+  .app-title {
+    font-size: 2.8rem;
+  }
+
+  .filter-section {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1280px) {
+  .app-container {
+    max-width: 960px;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.75rem;
+  }
+
+  .app-container {
+    padding: 1.5rem 1rem;
+    border-radius: 24px;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-title {
+    font-size: 1.5rem;
+  }
+
+  .toggle-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.85rem 1rem;
+  }
+
+  .filter-select {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .filter-badge {
+    text-align: center;
+  }
+
+  .post-card {
+    padding: 1.25rem 1.25rem;
+    border-left-width: 5px;
+  }
+
+  .post-title {
+    font-size: 1.05rem;
+  }
+
+  .post-content {
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------- Dark Mode Support (System Preference) ---------- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+  }
+
+  .app-container {
+    background: rgba(30, 27, 75, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .app-title {
+    background: linear-gradient(135deg, #a78bfa, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .filter-section {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .filter-label {
+    color: #c4b5fd;
+  }
+
+  .filter-select {
+    background: rgba(30, 27, 75, 0.6);
+    color: #e0e0e0;
+    border-color: rgba(167, 139, 250, 0.2);
+  }
+
+  .filter-select:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.15);
+  }
+
+  .filter-badge {
+    background: rgba(167, 139, 250, 0.12);
+    color: #c4b5fd;
+  }
+
+  .filter-badge strong {
+    color: #a78bfa;
+  }
+
+  .list-title {
+    color: #e0e0e0;
+  }
+
+  .list-title-suffix {
+    color: #9ca3af;
+  }
+
+  .post-card {
+    background: rgba(30, 27, 75, 0.5);
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.2),
+      0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .post-title {
+    color: #e0e0e0;
+  }
+
+  .post-content {
+    color: #9ca3af;
+  }
+
+  .no-posts {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(167, 139, 250, 0.1);
+    color: #6b7280;
+  }
+}
+
