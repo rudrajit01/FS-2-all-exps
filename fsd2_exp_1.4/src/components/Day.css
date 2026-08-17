@@ -1,0 +1,110 @@
+.day-card {
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.day-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: #4a90d9;
+}
+
+.day-card.selected {
+  background: linear-gradient(135deg, #4a90d9, #357abd);
+  border-color: #2c6aa0;
+  color: white;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(74, 144, 217, 0.4);
+}
+
+.day-card.weekend {
+  background: #f8f0f0;
+  border-color: #e8d0d0;
+}
+
+.day-card.weekend.selected {
+  background: linear-gradient(135deg, #d94a4a, #bd3535);
+  border-color: #a02c2c;
+}
+
+.day-number {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.day-weekday {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.day-card.selected .day-weekday {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.day-status {
+  font-size: 10px;
+  color: #aaa;
+  background: #f5f5f5;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-top: 2px;
+}
+
+.day-card.selected .day-status {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.day-date {
+  font-size: 10px;
+  color: #bbb;
+  margin-top: 2px;
+}
+
+.day-card.selected .day-date {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.selected-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff6b6b;
+  color: white;
+  font-size: 9px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .day-card {
+    min-height: 80px;
+    padding: 10px 8px;
+  }
+  .day-number {
+    font-size: 18px;
+  }
+  .day-date {
+    font-size: 8px;
+  }
+}
