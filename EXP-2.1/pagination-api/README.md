@@ -1,4 +1,4 @@
-# 🚀 EXP-2.1 – Pagination API
+# 🚀 EXP-2.2– Pagination API
 
 A Spring Boot REST API project demonstrating **student data management with pagination** using **Spring Data JPA** and **H2 Database**.
 
